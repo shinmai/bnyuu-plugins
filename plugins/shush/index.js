@@ -12,6 +12,8 @@ export default {
   onLoad() {
     unpatch.push(before("sendMessage", findByProps("sendMessage", "receiveMessage"), shushUpBby))
     unpatch.push(before("uploadLocalFiles", findByProps("uploadLocalFiles"), shushUpBby))
+    unpatch.push(before("startTyping", findByProps("startTyping", "stopTyping"), _=>{}))
+    unpatch.push(before("stopTyping", findByProps("startTyping", "stopTyping"), _=>{}))
   },
   onUnload() {
     unpatch.forEach((x) => x())
