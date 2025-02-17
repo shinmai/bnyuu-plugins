@@ -14,7 +14,7 @@ export default {
     unpatch.push(before("uploadLocalFiles", findByProps("uploadLocalFiles"), shushUpBby))
   }
   onUnload() {
-    this.unpatch.forEach((x) => x())
-		this.unpatch = []
+    unpatch.forEach((x) => x())
+    unpatch = []
   }
 }
