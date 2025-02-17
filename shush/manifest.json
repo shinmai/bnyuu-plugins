@@ -1,0 +1,14 @@
+{
+    "name": "shush",
+    "description": "Port of a BD plugin.",
+    "authors": [
+        {
+            "name": "shi",
+            "id": "142594671078539264"
+        }
+    ],
+    "main": "index.js",
+    "vendetta": {
+        "icon": "ic_message_edit"
+    }
+}
