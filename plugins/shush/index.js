@@ -3,10 +3,12 @@ import { before, instead } from "@vendetta/patcher"
 
 const shushUpBby = args => {
   const msg = (args.length>1)?args[1]:args[0].parsedMessage
-  if(!msg.content.startsWith(",")) msg.content = '-# ' + msg.content
+  let smol = false, quiet = false
+  if(!msg.content.startsWith(",")) smol = true
   else msg.content = msg.content.substring(1)
-  if(!msg.content.startsWith(".")) msg.content = '@silent ' + msg.content
+  if(!msg.content.startsWith(".")) quiet = true
   else msg.content = msg.content.substring(1)
+  msg.content = quiet?'@silent ':'' + smol?'-# ':'' + msg.content
 }
 let unpatch = []
 
