@@ -5,6 +5,8 @@ const shushUpBby = args => {
   const msg = (args.length>1)?args[1]:args[0].parsedMessage
   if(!msg.content.startsWith(".")) msg.content = '@silent ' + msg.content
   else msg.content = msg.content.substring(1)
+  if(!msg.content.startsWith(",")) msg.content = '-# ' + msg.content
+  else msg.content = msg.content.substring(1)
 }
 let unpatch = []
 
