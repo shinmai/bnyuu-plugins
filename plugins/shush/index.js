@@ -8,7 +8,7 @@ const shushUpBby = args => {
   else msg.content = msg.content.substring(1)
   if(!msg.content.startsWith(".")) quiet = true
   else msg.content = msg.content.substring(1)
-  msg.content = quiet?'@silent ':'' + smol?'-# ':'' + msg.content
+  msg.content = (quiet?'@silent ':'') + (smol?'-# ':'') + msg.content
 }
 let unpatch = []
 
